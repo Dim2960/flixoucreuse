@@ -367,14 +367,18 @@ def aff_casting(df: pd.DataFrame) -> None:
 
                             imdb_id = person
                             chemin, name = display_people_image(imdb_id)
+                            
 
                             if chemin != 'https://image.tmdb.org/t/p/w220_and_h330_face':
-                                chemins[list_cat_people[id]].append(chemin) 
-                                names[list_cat_people[id]].append(name) 
+                                if image_exists(chemin):
+                                    chemins[list_cat_people[id]].append(chemin) 
+                                    names[list_cat_people[id]].append(name) 
+                                else:
+                                    print(chemin)
 
                         aaa = locals()['gens' + str(id)] 
 
-                    
+
                         nb_gens = len(chemins[list_cat_people[id]])
 
                         if nb_gens ==1:

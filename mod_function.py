@@ -1,5 +1,6 @@
 import pandas as pd
 from googletrans import Translator
+import requests as requests
 
 
 
@@ -43,3 +44,24 @@ def trad(text:str)->str:
     traduction = trans.translate(text, dest='fr')
 
     return traduction.text
+
+
+def image_exists(url):
+    """
+    Vérifie si une image existe à l'URL donnée.
+
+    Args:
+        url (str): L'URL de l'image à vérifier.
+
+    Returns:
+        bool: True si une image existe à l'URL donnée, False sinon.
+    """
+    try:
+        response = requests.get(url)
+        # Vérifiez si la requête a réussi et si le contenu est une image
+        if response.status_code == 200 and response.headers['content-type'].startswith('image'):
+            return True
+        else:
+            return False
+    except:
+        return False

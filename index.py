@@ -3,7 +3,6 @@ from intro import intro
 from mod_display import * # interieur import streamlit, pandas, base64, tmdb_API, mod_function
 import time
 import base64
-import streamlit.components.v1 as components
 
 
 ################################
