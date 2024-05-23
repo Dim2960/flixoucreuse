@@ -15,14 +15,32 @@ df_film, df_name, df_film_select = data_importation()
 
 
 ################################
+#   Gestion du style de la page
+################################
+
+# mise en mode large de la page streamlit
+st.set_page_config(layout="wide", initial_sidebar_state="expanded")
+
+# integration du style css
+with open(r"style.css") as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# affichage de l'image de fond
+background()
+
+
+
+################################
 #   gestion de la première ouverture
 ################################
+
 
 if 'affichage' not in st.session_state:
     st.session_state['affichage'] = True
 
+
 #affichage de l'introduction F comme FLIXOUCREUSE
-if st.session_state['affichage']:
+if st.session_state['affichage'] :
 
     #affichage de l'introduction
     intro()
@@ -44,13 +62,13 @@ if st.session_state['affichage']:
 
     autoplay_audio("media/Netflix.mp3")
 
+    st.session_state['affichage'] = False
+
     # temporisation de 5 seconde avant de rerun en supprimant l'appel de l'intro
     t=5
     time.sleep(t)
-
-    st.session_state['affichage'] = False
+    
     st.rerun()
-
 
 
 
@@ -71,19 +89,7 @@ else:
    
     
 
-################################
-#   Gestion du style de la page
-################################
 
-# mise en mode large de la page streamlit
-st.set_page_config(layout="wide", initial_sidebar_state="expanded")
-
-# integration du style css
-with open(r"style.css") as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-# affichage de l'image de fond
-background()
 
 
 

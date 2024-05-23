@@ -17,9 +17,11 @@ if 'tconst' in st.query_params:
     tconst = st.query_params["tconst"] 
     df_film = df_film[df_film['tconst']==tconst].reset_index()
     st.session_state['tconst'] = tconst
+    st.session_state['affichage'] = False
 
 elif 'tconst' in st.session_state:
     df_film = df_film[df_film['tconst']==st.session_state['tconst']].reset_index()
+    st.session_state['affichage'] = False
 
 
 ################################

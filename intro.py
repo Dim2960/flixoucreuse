@@ -1,6 +1,4 @@
-import streamlit.components.v1 as components
 import streamlit as st
-st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 
 def intro():
   script_html_css = """
