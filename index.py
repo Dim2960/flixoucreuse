@@ -1,6 +1,9 @@
 from mod_ML import *
+from intro import intro
 from mod_display import * # interieur import streamlit, pandas, base64, tmdb_API, mod_function
-
+import time
+import base64
+import streamlit.components.v1 as components
 
 
 ################################
@@ -8,6 +11,47 @@ from mod_display import * # interieur import streamlit, pandas, base64, tmdb_API
 ################################
 
 df_film, df_name, df_film_select = data_importation()
+
+
+
+################################
+#   gestion de la première ouverture
+################################
+
+if 'affichage' not in st.session_state:
+    st.session_state['affichage'] = True
+
+#affichage de l'introduction F comme FLIXOUCREUSE
+if st.session_state['affichage']:
+
+    #affichage de l'introduction
+    intro()
+
+    # on joue le son d'ouverture
+    def autoplay_audio(file_path: str):
+        with open(file_path, "rb") as f:
+            data = f.read()
+            b64 = base64.b64encode(data).decode()
+            md = f"""
+                <audio controls autoplay="true">
+                <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+                </audio>
+                """
+            st.markdown(
+                md,
+                unsafe_allow_html=True,
+            )
+
+    autoplay_audio("media/Netflix.mp3")
+
+    # temporisation de 5 seconde avant de rerun en supprimant l'appel de l'intro
+    t=5
+    time.sleep(t)
+
+    st.session_state['affichage'] = False
+    st.rerun()
+
+
 
 
 ################################
@@ -24,7 +68,7 @@ else:
         index = 33
     else:
         index = int(df_film[df_film['tconst']==st.session_state['tconst']].index[0])
-print(index)        
+   
     
 
 ################################
@@ -40,6 +84,7 @@ with open(r"style.css") as f:
 
 # affichage de l'image de fond
 background()
+
 
 
 ################################
@@ -131,3 +176,6 @@ with ctn_princ:
             ################################
 
             display_selection(result_film)
+
+
+
