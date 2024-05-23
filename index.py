@@ -16,14 +16,15 @@ df_film, df_name, df_film_select = data_importation()
 
 # si session_state existe alors select du film
 if 'tconst' not in st.session_state:
-    index = 0
-    st.session_state['tconst'] = df_film['tconst'][0]
+    index = 33
+    st.session_state['tconst'] = df_film['tconst'][33]
 else:
     result = df_film[df_film['tconst'] == st.session_state['tconst']]
     if result.empty:
-        index = 0
+        index = 33
     else:
         index = int(df_film[df_film['tconst']==st.session_state['tconst']].index[0])
+print(index)        
     
 
 ################################
