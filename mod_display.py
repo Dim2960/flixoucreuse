@@ -386,38 +386,55 @@ def aff_casting(df: pd.DataFrame) -> None:
                         else : 
                             slid_haut = nb_gens -2
 
-
-
                         if nb_gens >2:
                             aaa = st.slider(categ, 0, slid_haut, 0)
                             html = f"""
-                                <div style='display: flex; justify-content: center;'>
-                                    <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width=50% style="margin-left: 10px;margin-bottom: 10px;">
-                                    <img src="{str(chemins[list_cat_people[id]][1+aaa])}" width=50% style="margin-left: 10px;margin-right: 10px;margin-bottom:10px;">
+                                <div style='display: flex; justify-content: center; height:230px;'>
+                                    <figure style="margin: 5px;">
+                                        <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width="100%">
+                                        <figcaption>{str(names[list_cat_people[id]][0+aaa])}</figcaption>
+                                    </figure>
+                                    <figure style="margin: 5px;">
+                                        <img src="{str(chemins[list_cat_people[id]][1+aaa])}" width="100%">
+                                        <figcaption>{str(names[list_cat_people[id]][1+aaa])}</figcaption>
+                                    </figure>                              
                                 </div>
                             """
                         elif nb_gens == 2:
                             aaa = st.slider(categ, 0, 1, 0)
                             aaa = 0
                             html = f"""
-                                <div style='display: flex; justify-content: center;'>
-                                    <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width=50% style="margin-left: 10px;margin-bottom: 10px;">
-                                    <img src="{str(chemins[list_cat_people[id]][1+aaa])}" width=50% style="margin-left: 10px;margin-right: 10px;margin-bottom:10px;">
+                                <div style='display: flex; justify-content: center; height:230px;'>
+                                    <figure style="margin: 5px;">
+                                        <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width="100%">
+                                        <figcaption>{str(names[list_cat_people[id]][0+aaa])}</figcaption>
+                                    </figure>
+                                    <figure style="margin: 5px;">
+                                        <img src="{str(chemins[list_cat_people[id]][1+aaa])}" width="100%">
+                                        <figcaption>{str(names[list_cat_people[id]][1+aaa])}</figcaption>
+                                    </figure>                              
                                 </div>
                             """
                         elif nb_gens == 1:
                             aaa = st.slider(categ, 0, 1, 0)
                             aaa = 0
                             html = f"""
-                                <div style='display: flex; justify-content: center;'>
-                                    <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width=50% style="margin-left: 10px;margin-bottom: 10px;">
+                                <div style='display: flex; justify-content: center; height:230px;'>
+                                    <figure style="margin: 5px;">
+                                        <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width="50%">
+                                        <figcaption>{str(names[list_cat_people[id]][0+aaa])}</figcaption>
+                                    </figure>
+                                    <figure style="margin: 5px;">
+                                        <img src="" width="100%">
+                                        <figcaption></figcaption>
+                                    </figure>                            
                                 </div>
                             """
                         else:
                             aaa = st.slider(categ, 0, 1, 0)
                             aaa = 0
                             html = f"""
-                                <div style='display: flex; justify-content: center;'>
+                                <div style='display: flex; justify-content: center; height:230px;'>
                                     Pas d'inforamation disponible
                                 </div>
                             """
