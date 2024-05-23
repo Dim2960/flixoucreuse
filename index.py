@@ -1,6 +1,24 @@
 from mod_ML import *
 from mod_display import * # interieur import streamlit, pandas, base64, tmdb_API, mod_function
 import streamlit as st
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import base64
+from tmdb_API import *
+from mod_function import *
+from googletrans import Translator
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler, FunctionTransformer, MultiLabelBinarizer
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.neighbors import NearestNeighbors
+import numpy as np
+import sys
+import requests
+from mod_display_graph import *
+
 
 
 ################################
