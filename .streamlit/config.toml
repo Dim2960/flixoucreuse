@@ -1,0 +1,11 @@
+[client]
+showSidebarNavigation = false
+
+[theme]
+base="dark"
+
+[ui]
+layout = "wide"
+
+[sidebar]
+initial_sidebar_state = "expanded"
