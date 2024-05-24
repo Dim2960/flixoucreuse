@@ -67,7 +67,8 @@ with col1:
     if image_exists(chemin):
         pass
     else:
-        chemin = 'https://dim2960.github.io/poster_manquant.png'
+        encode_image = read_st_local_img(r"img/Ted.png")
+        chemin = f"data:image/png;base64,{encode_image}"
         
     st.markdown(f"""<div style='display: flex; justify-content: center;'>
                         <img src="{chemin}" style='width:400px;'>

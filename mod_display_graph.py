@@ -6,6 +6,16 @@ import matplotlib.pyplot as plt
 
 
 def graph_film_pop(df:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 films les plus populaires à partir d'un DataFrame.
+
+    Parameters:
+    df (pd.DataFrame): Le DataFrame contenant les données des films. 
+                       Doit inclure les colonnes 'tconst', 'title', et 'popularity'.
+
+    Returns:
+    None
+    """
     # Trier le DataFrame par la colonne 'popularity' et obtenir les 10 premières lignes
     top_movies = df.sort_values(by='popularity', ascending=False).head(10)
 
@@ -30,6 +40,16 @@ def graph_film_pop(df:pd.DataFrame)->None:
 
 
 def graph_film_revenu(df:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 films ayant généré le plus de revenus à partir d'un DataFrame.
+
+    Parameters:
+    df (pd.DataFrame): Le DataFrame contenant les données des films. 
+                       Doit inclure les colonnes 'title' et 'revenue'.
+
+    Returns:
+    None
+    """
     top_10_films_revenue = df.sort_values(by='revenue', ascending=False).head(10)
 
     top_10_films_revenue['revenue'] = top_10_films_revenue['revenue'].apply(lambda x1: round(x1*1e-9, 2))
@@ -53,6 +73,17 @@ def graph_film_revenu(df:pd.DataFrame)->None:
 
 
 def graph_film_note(df:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 films les mieux notés parmi ceux ayant un nombre de votes élevé.
+
+    Parameters:
+    df (pd.DataFrame): Le DataFrame contenant les données des films. 
+                       Doit inclure les colonnes 'title', 'numVotes', et 'averageRating'.
+
+    Returns:
+    None
+    """
+
     df_vote_desc = df.sort_values(by='numVotes', ascending=False)
 
     decile_nb_vote = df['numVotes'].quantile(0.2)
@@ -83,6 +114,19 @@ def graph_film_note(df:pd.DataFrame)->None:
 
 
 def graph_acteurs(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 acteurs/actrices les plus fréquents dans les films d'un DataFrame.
+
+    Parameters:
+    df_film (pd.DataFrame): Le DataFrame contenant les données des films. 
+                            Doit inclure les colonnes 'actor' et 'actress'.
+    df_name (pd.DataFrame): Le DataFrame contenant les données des noms des acteurs/actrices. 
+                            Doit inclure les colonnes 'nconst' et 'primaryName'.
+
+    Returns:
+    None
+    """
+
     # Calculer les valeurs uniques combinées des colonnes 'actor' et 'actress'
     unique_actors_actress = df_film['actor'].dropna().explode()
 
@@ -112,6 +156,19 @@ def graph_acteurs(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
 
 
 def graph_actrices(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 actrices les plus fréquentes dans les films d'un DataFrame.
+
+    Parameters:
+    df_film (pd.DataFrame): Le DataFrame contenant les données des films.
+                            Doit inclure la colonne 'actress'.
+    df_name (pd.DataFrame): Le DataFrame contenant les données des noms des actrices.
+                            Doit inclure les colonnes 'nconst' et 'primaryName'.
+
+    Returns:
+    None
+    """
+
     # Filtrer les valeurs indésirables
     filtered_actors_actress = df_film['actress'].dropna().explode()
 
@@ -141,6 +198,17 @@ def graph_actrices(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
 
 
 def graph_societeProd(df:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 sociétés de production ayant produit le plus de films.
+
+    Parameters:
+    df (pd.DataFrame): Le DataFrame contenant les données des films.
+                       Doit inclure la colonne 'production_companies_name'.
+
+    Returns:
+    None
+    """
+
     production_companies_series = df['production_companies_name'].explode()
     production_companies_counts = production_companies_series.value_counts()
 
@@ -154,12 +222,27 @@ def graph_societeProd(df:pd.DataFrame)->None:
     fig11.set_ylabel("Occurence")
     fig11.set_xlabel(None)
     fig11.set_xticklabels(fig11.get_xticklabels(), rotation=45, horizontalalignment='right')
+
     st.pyplot()
+    
     return None
 
 
 
 def graph_real(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 réalisateurs les plus fréquents dans les films d'un DataFrame.
+
+    Parameters:
+    df_film (pd.DataFrame): Le DataFrame contenant les données des films.
+                            Doit inclure la colonne 'directors'.
+    df_name (pd.DataFrame): Le DataFrame contenant les données des noms des réalisateurs.
+                            Doit inclure les colonnes 'nconst' et 'primaryName'.
+
+    Returns:
+    None
+    """
+
     # Filtrer les valeurs indésirables
     filtered_director = df_film['directors'].dropna().explode()
 
@@ -189,7 +272,19 @@ def graph_real(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
     return None
 
 
+
 def graph_film_genres(df:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 genres de films les plus fréquents dans un DataFrame.
+
+    Parameters:
+    df (pd.DataFrame): Le DataFrame contenant les données des films.
+                       Doit inclure la colonne 'genres'.
+
+    Returns:
+    None
+    """
+
     genres_series = df['genres'].explode()
 
     genre_counts = genres_series.value_counts()
@@ -209,6 +304,16 @@ def graph_film_genres(df:pd.DataFrame)->None:
 
 
 def graph_paysProd(df:pd.DataFrame)->None:
+    """
+    Affiche un graphique à barres des 10 pays de production les plus fréquents dans un DataFrame.
+
+    Parameters:
+    df (pd.DataFrame): Le DataFrame contenant les données des films.
+                       Doit inclure la colonne 'production_countries'.
+
+    Returns:
+    None
+    """
     countries_series = df['production_countries'].explode()
     top_countries = countries_series.value_counts().head(10)
 
@@ -228,6 +333,17 @@ def graph_paysProd(df:pd.DataFrame)->None:
 
 
 def graph_duree_film(df:pd.DataFrame)->None:
+    """
+    Affiche un histogramme de la distribution de la durée des films dans un DataFrame.
+
+    Parameters:
+    df (pd.DataFrame): Le DataFrame contenant les données des films.
+                       Doit inclure la colonne 'runtime'.
+
+    Returns:
+    None
+    """
+
     fig1 = sns.histplot(df, x= 'runtime', bins=10, kde=True)
 
     fig1.set_title('Distribution de la durée des films')
@@ -241,6 +357,17 @@ def graph_duree_film(df:pd.DataFrame)->None:
 
 
 def graph_note_moyenne(df:pd.DataFrame)->None:
+    """
+    Affiche un histogramme de la distribution des notes moyennes dans un DataFrame.
+
+    Parameters:
+    df (pd.DataFrame): Le DataFrame contenant les données des films.
+                       Doit inclure la colonne 'averageRating'.
+
+    Returns:
+    None
+    """
+
     filtered_ratings = df['averageRating'].dropna()
 
     # Créer un graphique de distribution

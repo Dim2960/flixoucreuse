@@ -9,26 +9,8 @@ def background()->None:
     """
     Définit une image de fond personnalisée pour l'application Streamlit.
     """
-
-    @st.cache_data
-    def get_img_as_base64(file)->str:
-        """
-        Lit un fichier image et l'encode en une chaîne base64.
-
-        Args:
-            file (str): Chemin vers le fichier image.
-
-        Returns:
-            str: Chaîne encodée en base64 de l'image.
-        """
-        # Ouvre le fichier et lit les données
-        with open(file, "rb") as f:
-            data = f.read()
-        # Encode les données en base64 et les retourne sous forme de chaîne
-        return base64.b64encode(data).decode()
-
     # Convertit le fichier image en une chaîne base64
-    img = get_img_as_base64(r"img/Wallpaper.JPG")
+    img = read_st_local_img(r"img/Wallpaper.JPG")
 
     # Définit le style CSS pour l'image de fond et d'autres éléments de l'interface utilisateur
     page_bg_img = f"""
@@ -219,14 +201,13 @@ def diplay_title()->None:
     """
     Affiche une image de titre centrée dans l'application Streamlit.
     """
-
     # Chemin de l'image de titre
-    chemin_titre = "https://dim2960.github.io/Flixoucreuse.png"
+    encode_image = read_st_local_img(r"img/Flixoucreuse.png")
 
     # HTML pour afficher l'image centrée
     html_titre = f"""
             <div style='display: flex; justify-content: center;'>
-                <img src="{chemin_titre}" width=50%>  
+                <img src="data:image/png;base64,{encode_image}" width=50%>  
             </div>
     """
 
@@ -248,7 +229,7 @@ def display_reco(list_film2:list, df_film:pd.DataFrame)->None:
 
     # Affichage des posters des films recommandés sur des colonnes
     cols = st.columns(5)
-    print('')
+
     for i, element in enumerate(list_film2[1:6]):
 
         # Filtrer le DataFrame pour obtenir les informations du film recommandé
@@ -262,7 +243,9 @@ def display_reco(list_film2:list, df_film:pd.DataFrame)->None:
             if image_exists(chemin_complet):
                 pass
             else:
-                chemin_complet = 'https://dim2960.github.io/poster_manquant.png'
+                encode_image = read_st_local_img(r"img/Ted.png")
+                chemin_complet = f"data:image/png;base64,{encode_image}"
+
 
 
             # Créer le HTML pour afficher le poster du film avec un lien cliquable
@@ -296,7 +279,9 @@ def display_selection(result_film:pd.DataFrame)->None:
     if image_exists(chemin_complet):
         pass
     else:
-        chemin_complet = 'https://dim2960.github.io/poster_manquant.png'
+        encode_image = read_st_local_img(r"img/Ted.png")
+        chemin_complet = f"data:image/png;base64,{encode_image}"
+
 
      # Création du HTML pour afficher le poster du film avec un lien cliquable
     html = f"""
@@ -390,12 +375,14 @@ def aff_casting(df: pd.DataFrame) -> None:
 
                             imdb_id = person
                             chemin, name = display_people_image(imdb_id)
-                            print(imdb_id)
+
                             if image_exists(chemin):
                                 chemins[list_cat_people[id]].append(chemin) 
                                 names[list_cat_people[id]].append(name) 
                             else:
-                                chemins[list_cat_people[id]].append('https://dim2960.github.io/poster_manquant.png') 
+                                encode_image = read_st_local_img(r"img/RLej.png")
+                                chemin_complet = f"data:image/png;base64,{encode_image}"
+                                chemins[list_cat_people[id]].append(chemin_complet) 
                                 names[list_cat_people[id]].append(name) 
 
 
@@ -472,6 +459,23 @@ def aff_casting(df: pd.DataFrame) -> None:
                         st.markdown(html, unsafe_allow_html=True)
                         n_col_temp += 1
 
-
-
     return None
+
+
+def read_st_local_img(file)->str:
+    """
+    Lit un fichier image et l'encode en une chaîne base64.
+
+    Args:
+        file (str): Chemin vers le fichier image.
+
+    Returns:
+        str: Chaîne encodée en base64 de l'image.
+    """
+
+    # Ouvre le fichier et lit les données
+    with open(file, "rb") as f:
+        data = f.read()
+    # Encode les données en base64 et les retourne sous forme de chaîne
+    return base64.b64encode(data).decode()
+

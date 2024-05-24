@@ -3,9 +3,18 @@ import requests
 import pandas as pd
 
 # recuperation de la clé API tmdb
-def get_api_key(
-        path: str = r"data/API_tmdb.txt"
-) -> tuple[str]:
+def get_api_key(path: str = r"data/API_tmdb.txt") -> tuple[str]:
+    """
+    Récupère la clé API pour accéder à l'API de The Movie Database (TMDB) à partir d'un fichier texte.
+
+    Parameters:
+    path (str): Le chemin du fichier texte contenant la clé API.
+                Par défaut, le chemin est défini sur "data/API_tmdb.txt".
+
+    Returns:
+    str: La clé API pour accéder à l'API de TMDB.
+    """
+
     with open(path, 'r') as api_file:
         first_line = api_file.readline()
 
@@ -14,6 +23,16 @@ def get_api_key(
     
 @st.cache_data
 def fetch_people_imagePath(tmdb_id: int = 31, api_key: str = get_api_key() )-> str:
+    """
+    Récupère le chemin de l'image de profil d'une personne à partir de son identifiant TMDB.
+
+    Parameters:
+    tmdb_id (int): L'identifiant TMDB de la personne.
+    api_key (str): La clé API pour accéder à l'API de The Movie Database (TMDB).
+
+    Returns:
+    str: Le chemin de l'image de profil de la personne.
+    """
 
     url = f'https://api.themoviedb.org/3/person/{tmdb_id}/images?api_key={api_key}'
 
@@ -36,6 +55,16 @@ def fetch_people_imagePath(tmdb_id: int = 31, api_key: str = get_api_key() )-> s
 
 @st.cache_data 
 def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tuple[int,str]:
+    """
+    Récupère l'identifiant TMDB et le nom d'une personne à partir de son identifiant IMDb.
+
+    Parameters:
+    my_imdb_id (str): L'identifiant IMDb de la personne.
+    api_key (str): La clé API pour accéder à l'API de The Movie Database (TMDB).
+
+    Returns:
+    tuple[int, str]: L'identifiant TMDB et le nom de la personne.
+    """
 
     url = f'https://api.themoviedb.org/3/find/{my_imdb_id}?external_source=imdb_id&api_key={api_key}'
 
@@ -56,8 +85,41 @@ def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tup
         print("Erreur fetching data")
         return None
 
+    
+
+
+def display_people_image(imdb_id: str)-> tuple[str, str]:    
+    """
+    Affiche l'image de profil d'une personne à partir de son identifiant IMDb.
+
+    Parameters:
+    imdb_id (str): L'identifiant IMDb de la personne.
+
+    Returns:
+    tuple[str, str]: Le chemin de l'image de profil et le nom de la personne.
+    """
+
+    tmdb_id, name = fetch_tmdbId_from_imdbId(imdb_id)
+    image_name = fetch_people_imagePath(tmdb_id)
+
+    chemin = f"https://image.tmdb.org/t/p/w220_and_h330_face{image_name}" 
+
+    return chemin, name
+
+
+
 
 def fetch_idMovie_fromImdbtconst(my_imdb_id: str, api_key: str = get_api_key())->tuple[int,str]:
+    """
+    Récupère l'identifiant TMDB d'un film à partir de son identifiant IMDb.
+
+    Parameters:
+    my_imdb_id (str): L'identifiant IMDb du film.
+    api_key (str): La clé API pour accéder à l'API de The Movie Database (TMDB).
+
+    Returns:
+    int: L'identifiant TMDB du film.
+    """
         # les trois freres: tt0114732 - 37653
 
     url = f'https://api.themoviedb.org/3/find/{my_imdb_id}?external_source=imdb_id&api_key={api_key}'
@@ -79,7 +141,19 @@ def fetch_idMovie_fromImdbtconst(my_imdb_id: str, api_key: str = get_api_key())-
         print("Erreur fetching data")
         return None
 
+
+
 def fetch_video_link(movie_id: int, api_key: str = get_api_key())->str:
+    """
+    Récupère le lien de la vidéo du trailer d'un film à partir de son identifiant TMDB.
+
+    Parameters:
+    movie_id (int): L'identifiant TMDB du film.
+    api_key (str): La clé API pour accéder à l'API de The Movie Database (TMDB).
+
+    Returns:
+    str: Le lien de la vidéo du trailer sur YouTube.
+    """
 
     url = f"https://api.themoviedb.org/3/movie/{str(movie_id)}/videos?api_key={api_key}"
 
@@ -102,17 +176,3 @@ def fetch_video_link(movie_id: int, api_key: str = get_api_key())->str:
     else:
         st.write("Erreur fetching data", response.status_code)
         return ''
-
-    
-
-
-def display_people_image(imdb_id: str)-> tuple[str, str]:
-
-    tmdb_id, name = fetch_tmdbId_from_imdbId(imdb_id)
-    image_name = fetch_people_imagePath(tmdb_id)
-
-    chemin = f"https://image.tmdb.org/t/p/w220_and_h330_face{image_name}" 
-
-    return chemin, name
-
-
