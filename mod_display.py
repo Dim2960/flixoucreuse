@@ -390,7 +390,7 @@ def aff_casting(df: pd.DataFrame) -> None:
 
                             imdb_id = person
                             chemin, name = display_people_image(imdb_id)
-
+                            print(imdb_id)
                             if image_exists(chemin):
                                 chemins[list_cat_people[id]].append(chemin) 
                                 names[list_cat_people[id]].append(name) 
