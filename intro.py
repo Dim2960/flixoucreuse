@@ -17,7 +17,7 @@ def intro():
         justify-content: center;
         align-items: center;
         width: 1750px;
-        height: 700px ;
+        height: 700px;
         background-color: #000000;
         overflow: hidden;
       }
