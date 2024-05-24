@@ -77,12 +77,12 @@ if st.session_state['affichage'] :
 
 # si session_state existe alors select du film
 if 'tconst' not in st.session_state:
-    index = 33
+    index = 32
     st.session_state['tconst'] = df_film['tconst'][33]
 else:
     result = df_film[df_film['tconst'] == st.session_state['tconst']]
     if result.empty:
-        index = 33
+        index = 32
     else:
         index = int(df_film[df_film['tconst']==st.session_state['tconst']].index[0])
    
