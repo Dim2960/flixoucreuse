@@ -84,23 +84,28 @@ with col2:
         st.header(df_film['title'][0])
         
         # overview - description du film
-        st.write(trad(df_film['overview'][0]))
+        if (str(df_film['overview'][0]) !=""):
+            st.write(trad(df_film['overview'][0]))
         
         # année de sortie et durée du film
-        textAnneeDuree = f"""<B>Année de sortie :</B> {str(df_film['year_release_date'][0])} - <B>Durée du film :</B> {str(df_film['runtime'][0])} minutes"""
-        st.markdown(textAnneeDuree, unsafe_allow_html=True)
+        if (int(df_film['year_release_date'][0]) !=0) & (int(df_film['runtime'][0]) !=0):
+            textAnneeDuree = f"""<B>Année de sortie :</B> {str(df_film['year_release_date'][0])} - <B>Durée du film :</B> {str(df_film['runtime'][0])} minutes"""
+            st.markdown(textAnneeDuree, unsafe_allow_html=True)
 
         # genre
-        textGenre = f"""<B>Genre : </B>{str(df_film['genres'][0]).replace("' '", " - ").replace("['", "").replace("']", "")}"""
-        st.markdown(textGenre, unsafe_allow_html=True)
+        if (str(df_film['genres'][0]) !="[]"):
+            textGenre = f"""<B>Genre : </B>{str(df_film['genres'][0]).replace("' '", " - ").replace("['", "").replace("']", "")}"""
+            st.markdown(textGenre, unsafe_allow_html=True)
 
         # pays et société de production du film 
-        textprod = f"""<B>Pays de production :</B> {str(df_film['production_countries'][0]).replace("' '", " - ").replace("['", "").replace("']", "")} - <B>Société de production : </B>{str(df_film['production_companies_name'][0]).replace("' '", " - ").replace("['", "").replace("']", "")}"""
-        st.markdown(textprod, unsafe_allow_html=True)
+        if (str(df_film['production_countries'][0]) !="[]") & (str(df_film['production_companies_name'][0]) !="[]"):
+            textprod = f"""<B>Pays de production :</B> {str(df_film['production_countries'][0]).replace("' '", " - ").replace("['", "").replace("']", "")} - <B>Société de production : </B>{str(df_film['production_companies_name'][0]).replace("' '", " - ").replace("['", "").replace("']", "")}"""
+            st.markdown(textprod, unsafe_allow_html=True)
 
         # version originale du film
-        textVO = f"""<B>Version Originale :</B> {str(df_film['original_language'][0]).replace("' '", " - ").replace("['", "").replace("']", "").upper()}"""
-        st.markdown(textVO, unsafe_allow_html=True)
+        if (str(df_film['original_language'][0]) !="[]"):
+            textVO = f"""<B>Version Originale :</B> {str(df_film['original_language'][0]).replace("' '", " - ").replace("['", "").replace("']", "").upper()}"""
+            st.markdown(textVO, unsafe_allow_html=True)
         
 
     with container2:

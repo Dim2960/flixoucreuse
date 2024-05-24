@@ -248,25 +248,35 @@ def display_reco(list_film2:list, df_film:pd.DataFrame)->None:
 
     # Affichage des posters des films recommandés sur des colonnes
     cols = st.columns(5)
-
+    print('')
     for i, element in enumerate(list_film2[1:6]):
 
         # Filtrer le DataFrame pour obtenir les informations du film recommandé
         chemin_poster = df_film[df_film['tconst'] == element].reset_index()
 
+
         with cols[i]:
+            # # vérification que l'image existe sur tmdb
+            chemin_complet = f'https://image.tmdb.org/t/p/w220_and_h330_face{chemin_poster["poster_path"][0]}'
+            
+            if image_exists(chemin_complet):
+                pass
+            else:
+                chemin_complet = 'https://dim2960.github.io/poster_manquant.jpg'
+
+
             # Créer le HTML pour afficher le poster du film avec un lien cliquable
             html2 = f"""
                 <div style='display: flex; justify-content: center;'>
                     <a href="nouvelle_page?tconst={chemin_poster['tconst'][0]}" target= "_self" >
-                        <img src="https://image.tmdb.org/t/p/w220_and_h330_face{chemin_poster["poster_path"][0]}" class="hover-image1">  
+                        <img src="{chemin_complet}" class="hover-image1">  
                     </a>
                 </div>
             """
-
             # Afficher le poster du film 
             st.markdown(html2, unsafe_allow_html=True)
             st.write(' ')
+
 
 
 
@@ -373,8 +383,7 @@ def aff_casting(df: pd.DataFrame) -> None:
                                 if image_exists(chemin):
                                     chemins[list_cat_people[id]].append(chemin) 
                                     names[list_cat_people[id]].append(name) 
-                                else:
-                                    print(chemin)
+
 
                         aaa = locals()['gens' + str(id)] 
 
