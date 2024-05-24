@@ -64,10 +64,16 @@ with col1:
 
     chemin=f"https://image.tmdb.org/t/p/w220_and_h330_face{df_film['poster_path'][0]}"
 
+    if image_exists(chemin):
+        pass
+    else:
+        chemin = 'https://dim2960.github.io/poster_manquant.png'
+        
     st.markdown(f"""<div style='display: flex; justify-content: center;'>
-                        <img src="https://image.tmdb.org/t/p/w220_and_h330_face{df_film['poster_path'][0]}" style='width:400px;'>
+                        <img src="{chemin}" style='width:400px;'>
                     </div>
                 """, unsafe_allow_html=True)
+        
     
     title_format = f"""<p style="text-align: center; font-family: Arial; color: #808080; font-size: 40px; font-weight: bold;">
                             {aff_etoile_rate(df_film['averageRating'][0])}

@@ -262,15 +262,18 @@ def display_reco(list_film2:list, df_film:pd.DataFrame)->None:
             if image_exists(chemin_complet):
                 pass
             else:
-                chemin_complet = 'https://dim2960.github.io/poster_manquant.jpg'
+                chemin_complet = 'https://dim2960.github.io/poster_manquant.png'
 
 
             # Créer le HTML pour afficher le poster du film avec un lien cliquable
             html2 = f"""
                 <div style='display: flex; justify-content: center;'>
-                    <a href="nouvelle_page?tconst={chemin_poster['tconst'][0]}" target= "_self" >
-                        <img src="{chemin_complet}" class="hover-image1">  
-                    </a>
+                    <figure style="margin: 5px; text-align:center;">
+                        <a href="nouvelle_page?tconst={chemin_poster['tconst'][0]}" target= "_self" >
+                            <img src="{chemin_complet}" class="hover-image1">  
+                        </a>
+                        <figcaption style="text-align:center;">{str(chemin_poster["title"][0])}</figcaption>
+                    </figure>
                 </div>
             """
             # Afficher le poster du film 
@@ -287,12 +290,19 @@ def display_selection(result_film:pd.DataFrame)->None:
     Args:
         result_film (pd.DataFrame): DataFrame contenant les informations sur le film sélectionné.
     """
+    # # vérification que l'image existe sur tmdb
+    chemin_complet = f'https://image.tmdb.org/t/p/w220_and_h330_face{str(result_film['poster_path'][0])}'
+    
+    if image_exists(chemin_complet):
+        pass
+    else:
+        chemin_complet = 'https://dim2960.github.io/poster_manquant.png'
 
      # Création du HTML pour afficher le poster du film avec un lien cliquable
     html = f"""
         <div style='display: flex; justify-content: center;'>
             <a href="nouvelle_page?tconst={result_film['tconst'][0]}" target= "_self" >
-                <img src="https://image.tmdb.org/t/p/w220_and_h330_face{str(result_film['poster_path'][0])}" class="hover-image">  
+                <img src="{chemin_complet}" class="hover-image">  
             </a>
         </div>
     """
@@ -348,11 +358,14 @@ def aff_casting(df: pd.DataFrame) -> None:
     col20, col21, col22, col23 = st.columns(4)
     gens0, gens1, gens2, gens3, gens4, gens5, gens6 = 0,0,0,0,0,0,0
     bbb = 0
+    n_col_temp=0
 
-    for id in range(len(list_cat_people)):  
-        col2 = locals()['col2' + str(id)]
+    for id in range(len(list_cat_people)): 
+
+        col2 = locals()['col2' + str(n_col_temp)]
+
         
-        if len(df[list_cat_people[id]]) != 0:
+        if len(df[list_cat_people[id]]) != 0 :
             with col2:
                 CTN3 = st.container(border=True)
                 with CTN3:
@@ -371,22 +384,22 @@ def aff_casting(df: pd.DataFrame) -> None:
 
                     cat = df[list_cat_people[id]][0]
 
-                    if len(cat) != 0:
+                    if (len(cat) != 0):
                         
                         for person in cat:
 
                             imdb_id = person
                             chemin, name = display_people_image(imdb_id)
-                            
 
-                            if chemin != 'https://image.tmdb.org/t/p/w220_and_h330_face':
-                                if image_exists(chemin):
-                                    chemins[list_cat_people[id]].append(chemin) 
-                                    names[list_cat_people[id]].append(name) 
+                            if image_exists(chemin):
+                                chemins[list_cat_people[id]].append(chemin) 
+                                names[list_cat_people[id]].append(name) 
+                            else:
+                                chemins[list_cat_people[id]].append('https://dim2960.github.io/poster_manquant.png') 
+                                names[list_cat_people[id]].append(name) 
 
 
                         aaa = locals()['gens' + str(id)] 
-
 
                         nb_gens = len(chemins[list_cat_people[id]])
 
@@ -448,12 +461,17 @@ def aff_casting(df: pd.DataFrame) -> None:
                             aaa = 0
                             html = f"""
                                 <div style='display: flex; justify-content: center; height:230px;'>
-                                    Pas d'inforamation disponible
+                                    <figure style="margin: 5px;">
+                                        <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width="50%">
+                                        <figcaption>{str(names[list_cat_people[id]][0+aaa])}</figcaption>
+                                    </figure>
                                 </div>
                             """
 
                         # Affichage du poster du film en utilisant st.markdown pour interpréter le HTML
                         st.markdown(html, unsafe_allow_html=True)
+                        n_col_temp += 1
+
 
 
     return None
