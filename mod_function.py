@@ -46,7 +46,7 @@ def trad(text:str)->str:
     return traduction.text
 
 
-def image_exists(url):
+def image_exists(url)-> Bool:
     """
     Vérifie si une image existe à l'URL donnée.
 
