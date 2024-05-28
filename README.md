@@ -13,6 +13,7 @@ Le projet s'est déroulé en plusieurs étapes :
 ## Table des matières
 - [Installation](#installation)
 - [Utilisation](#utilisation)
+- [Membres du projet](#membres)
 - [Contributing](#contributing)
 - [Licence](#licence)
 
@@ -24,7 +25,7 @@ Le projet s'est déroulé en plusieurs étapes :
     ```
 2. Allez dans le répertoire du projet:
     ```sh
-    cd nom-du-projet
+    cd flixoucreuse
     ```
 3. Installez les dépendances:
     ```sh
@@ -35,4 +36,11 @@ Le projet s'est déroulé en plusieurs étapes :
 ## Utilisation
 
 * Pour explorer les données et exécuter les analyses, ouvrez les notebooks correspondants dans Jupyter ou Google Colab.
-* Pour utiliser l'application ouvrez l'application à partir de l'url suivante : [link](https://flixoucreuse-xdmhxxc7d3cexk8ixtxcks.streamlit.app/)
+* Pour utiliser l'application ouvrez l'application à partir de l'url suivante : [appli-streamlit](https://flixoucreuse-xdmhxxc7d3cexk8ixtxcks.streamlit.app/)
+
+
+## Les membres du projet
+
+victoria-1989
+charaabi01
+Dim2960
