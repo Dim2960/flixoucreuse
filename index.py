@@ -41,26 +41,6 @@ if 'affichage' not in st.session_state:
 #affichage de l'introduction F comme FLIXOUCREUSE
 if st.session_state['affichage'] :
 
-    #affichage de l'introduction
-    intro()
-
-    # on joue le son d'ouverture
-    def autoplay_audio(file_path: str):
-        with open(file_path, "rb") as f:
-            data = f.read()
-            b64 = base64.b64encode(data).decode()
-            md = f"""
-                <audio controls autoplay="true">
-                <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
-                </audio>
-                """
-            st.markdown(
-                md,
-                unsafe_allow_html=True,
-            )
-
-    autoplay_audio("media/Netflix.mp3")
-
     st.session_state['affichage'] = False
 
     # temporisation de 5 seconde avant de rerun en supprimant l'appel de l'intro
