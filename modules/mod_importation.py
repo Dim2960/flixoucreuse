@@ -1,10 +1,3 @@
-from mod_display_graph import *
-from mod_display import * 
-from mod_machine_learning import *
-from mod_function import *
-from tmdb_api import *
-
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -24,3 +17,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.neighbors import NearestNeighbors
+
+from modules.mod_display_graph import *
+from modules.mod_display import * 
+from modules.mod_machine_learning import *
+from modules.mod_function import *
+from modules.tmdb_api import *

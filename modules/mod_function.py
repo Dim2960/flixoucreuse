@@ -11,13 +11,13 @@ def data_importation()->tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
             - df_film_select (pd.DataFrame): Copie de df_film utilisée pour une sélection par défaut dans select box.
     """
     # Lecture des données des films à partir d'un fichier Parquet
-    df_film = pd.read_parquet(r'data/BDD_clean_avant_ML_films.parquet')
+    df_film = pd.read_parquet(r'data/bdd_clean_avant_ml_films.parquet')
     # trie du dfpour le mettre par ordre de ratings
     df_film2 = df_film.sort_values('averageRating', ascending=False).reset_index()
 
 
     # Lecture des données des noms à partir d'un fichier Parquet
-    df_name = pd.read_parquet(r'data/BDD_clean_avant_ML_name.parquet')
+    df_name = pd.read_parquet(r'data/bdd_clean_avant_ml_name.parquet')
     
     # Création d'un index d'extraction par défaut en copiant le DataFrame des films
     df_film_select = df_film2.copy()
