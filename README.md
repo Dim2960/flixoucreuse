@@ -13,7 +13,7 @@ Le projet s'est déroulé en plusieurs étapes :
 ## Table des matières
 - [Installation](#installation)
 - [Utilisation](#utilisation)
-- [Membres du projet](#membres du projet)
+- [Membres du projet](#membres)
 - [Contributing](#contributing)
 - [Licence](#licence)
 
@@ -39,10 +39,11 @@ Le projet s'est déroulé en plusieurs étapes :
 
 ## Membres du projet
 
-victoria-1989
-charaabi01
+victoria-1989  
+charaabi01  
 Dim2960
 
 ## Remerciements
 
-Merci à Romain Lejeune pour l'aide apportée.
+- Merci à [Romain Lejeune](https://github.com/nom) pour l'aide apportée durant ce projet.
+
