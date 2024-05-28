@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 
 # recuperation de la clé API tmdb
-def get_api_key(path: str = r"data/API_tmdb.txt") -> tuple[str]:
+def get_api_key(path: str = r"data/api_tmdb.txt") -> tuple[str]:
     """
     Récupère la clé API pour accéder à l'API de The Movie Database (TMDB) à partir d'un fichier texte.
 
