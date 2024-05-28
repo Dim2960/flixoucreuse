@@ -1,5 +1,5 @@
-from modules.mod_display_graph import *
-from modules.mod_display import * # interieur import streamlit, pandas, base64, tmdb_API, mod_function
+from modules.display_graph import *
+from modules.display import * # interieur import streamlit, pandas, base64, tmdb_API, mod_function
 
 
 ################################

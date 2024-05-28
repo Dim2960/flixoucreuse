@@ -1,5 +1,10 @@
-from modules.mod_importation import *
+from modules.importation import *
 
+from modules.display_graph import *
+from modules.display import * 
+from modules.machine_learning import *
+from modules.function import *
+from modules.tmdb_api import *
 
 
 ################################
