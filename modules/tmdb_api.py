@@ -16,6 +16,8 @@ def get_api_key(path: str = r"data/api_tmdb.txt") -> tuple[str]:
     with open(path, 'r') as api_file:
         first_line = api_file.readline()
 
+        print(first_line.split(":")[1].strip())
+
         return first_line.split(":")[1].strip()
 
     

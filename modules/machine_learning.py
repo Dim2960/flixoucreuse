@@ -5,7 +5,7 @@ from modules.importation import (st, pd, np, Pipeline,
                                 TransformerMixin, NearestNeighbors)
 
 
-def prepa_data_filtered(df:pd.DataFrame, tconst_titre:str, genres:list, start_end_year:list)->pd.DataFrame:
+def prepa_data_filtered(df:pd.DataFrame, tconst_titre:str, genres:list[str], start_end_year:list[int, int])->pd.DataFrame:
     '''
     Prépare les données filtrées en fonction des genres et de l'année.
 
@@ -47,7 +47,7 @@ def prepa_data_filtered(df:pd.DataFrame, tconst_titre:str, genres:list, start_en
 
 
 
-def fetch_feautures_reco()->tuple[list, list, list]:
+def fetch_feautures_reco()->tuple[list[str], list[str], list[str]]:
     """
     Récupère les caractéristiques à utiliser pour la recommandation de films.
 
@@ -104,7 +104,7 @@ def prepa_transformer_stdScaler_Log()->Pipeline:
 
 
     
-def prepa_transformer_multiBin():
+def prepa_transformer_multiBin()->Pipeline:
     """
     Prépare le transformateur pour la transformation des caractéristiques catégorielles en utilisant MultiLabelBinarizer.
 
@@ -132,7 +132,7 @@ def prepa_transformer_multiBin():
 
 
 #### Standardize + log + binarizer
-def preprocessor_SLB(features_std:list, features_log_and_std:list, features_cat_list:list)-> Pipeline:
+def preprocessor_SLB(features_std:list[str], features_log_and_std:list[str], features_cat_list:list[str])-> Pipeline:
     """
     Prépare le préprocesseur pour les caractéristiques standardisées, logarithmiques et catégorielles.
 
@@ -170,7 +170,7 @@ def preprocessor_SLB(features_std:list, features_log_and_std:list, features_cat_
 
 
 
-def model_knn_module(df:pd.DataFrame, tconst_titre:str, preprocessor)->pd.DataFrame:
+def model_knn_module(df:pd.DataFrame, tconst_titre:str, preprocessor:Pipeline)->pd.DataFrame:
     """
     Entraîne un modèle KNN pour trouver les films les plus similaires à celui sélectionné.
 
@@ -203,7 +203,7 @@ def model_knn_module(df:pd.DataFrame, tconst_titre:str, preprocessor)->pd.DataFr
 
 
     # fonction trouver plus proche voisin
-    def plus_proche_voisin(df:pd.DataFrame, tconst_titre, pipeline: Pipeline)->pd.DataFrame:
+    def nearsest_neighbor(df:pd.DataFrame, tconst_titre:str, pipeline: Pipeline)->pd.DataFrame:
         """
         Trouve les films les plus similaires au film sélectionné à l'aide du modèle KNN.
 
@@ -231,13 +231,13 @@ def model_knn_module(df:pd.DataFrame, tconst_titre:str, preprocessor)->pd.DataFr
 
 
     # recommandation du film selectionné
-    plus_proche_voisin_df = plus_proche_voisin(df, tconst_titre, pipeline_with_knn)
+    plus_proche_voisin_df = nearsest_neighbor(df, tconst_titre, pipeline_with_knn)
 
     return plus_proche_voisin_df.reset_index()
 
 
 
-def ML_reco(df_film:pd.DataFrame, options_genre_film:list, start_year:int, end_year:int)->pd.DataFrame:
+def ML_reco(df_film:pd.DataFrame, options_genre_film:list[str], start_year:int, end_year:int)->pd.DataFrame:
     """
     Effectue une recommandation de films en utilisant un modèle de recommandation basé sur le voisinage le plus proche (KNN).
 

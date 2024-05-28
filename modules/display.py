@@ -55,7 +55,7 @@ def menu_navigation()->None:
 
 
 
-def menu_select_genres(df_film:pd.DataFrame)->tuple[pd.DataFrame, list]:
+def menu_select_genres(df_film:pd.DataFrame)->tuple[pd.DataFrame, list[str]]:
     """
     Affiche un menu de sélection de genres dans la barre latérale de l'application Streamlit
     et filtre les films en fonction des genres sélectionnés.
@@ -76,7 +76,7 @@ def menu_select_genres(df_film:pd.DataFrame)->tuple[pd.DataFrame, list]:
         genre_films, 
         [])
 
-    def filter_by_genre(genre_list:list, options:list)->bool:
+    def filter_by_genre(genre_list:list, options:list[str])->bool:
         """
         Filtre les films par genre.
 
@@ -98,7 +98,7 @@ def menu_select_genres(df_film:pd.DataFrame)->tuple[pd.DataFrame, list]:
 
 
 
-def menu_select_paysProd(df_film:pd.DataFrame)->tuple[pd.DataFrame, list]:
+def menu_select_paysProd(df_film:pd.DataFrame)->tuple[pd.DataFrame, list[str]]:
     """
     Permet de filtrer les données des films en fonction des pays de production sélectionnés.
 
@@ -117,7 +117,7 @@ def menu_select_paysProd(df_film:pd.DataFrame)->tuple[pd.DataFrame, list]:
         pays_prod, 
         [])
 
-    def filter_by_pays_prod(pays_prod_list:list, options:list)->bool:
+    def filter_by_pays_prod(pays_prod_list:list, options:list[str])->bool:
         """
         Fonction de filtre pour vérifier si un film appartient à l'un des pays sélectionnés.
 
@@ -138,7 +138,7 @@ def menu_select_paysProd(df_film:pd.DataFrame)->tuple[pd.DataFrame, list]:
 
 
 
-def menu_select_real(df_film:pd.DataFrame, df_name:pd.DataFrame):
+def menu_select_real(df_film:pd.DataFrame, df_name:pd.DataFrame)->tuple[pd.DataFrame, list[str]]:
 
     # Filtrer les valeurs indésirables
     filtered_realisateur = df_film['directors'].dropna().explode()
@@ -214,7 +214,7 @@ def diplay_title()->None:
 
 
 
-def display_reco(list_film2:list, df_film:pd.DataFrame)->None:
+def display_reco(list_film2:list[str], df_film:pd.DataFrame)->None:
     """
     Affiche les recommandations de films sous forme de posters cliquables dans l'application Streamlit.
 
