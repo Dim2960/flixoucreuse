@@ -243,7 +243,7 @@ def display_reco(list_film2:list, df_film:pd.DataFrame)->None:
             if image_exists(chemin_complet):
                 pass
             else:
-                encode_image = read_st_local_img(r"img/Ted.png")
+                encode_image = read_st_local_img(r"img/poster.png")
                 chemin_complet = f"data:image/png;base64,{encode_image}"
 
 
@@ -279,7 +279,7 @@ def display_selection(result_film:pd.DataFrame)->None:
     if image_exists(chemin_complet):
         pass
     else:
-        encode_image = read_st_local_img(r"img/Ted.png")
+        encode_image = read_st_local_img(r"img/poster.png")
         chemin_complet = f"data:image/png;base64,{encode_image}"
 
 
@@ -380,7 +380,7 @@ def aff_casting(df: pd.DataFrame) -> None:
                                 chemins[list_cat_people[id]].append(chemin) 
                                 names[list_cat_people[id]].append(name) 
                             else:
-                                encode_image = read_st_local_img(r"img/RLej.png")
+                                encode_image = read_st_local_img(r"img/portrait.png")
                                 chemin_complet = f"data:image/png;base64,{encode_image}"
                                 chemins[list_cat_people[id]].append(chemin_complet) 
                                 names[list_cat_people[id]].append(name) 
