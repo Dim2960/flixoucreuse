@@ -20,7 +20,7 @@ def get_api_key(path: str = r"data/api_tmdb.txt") -> tuple[str]:
 
     
 @st.cache_data
-def fetch_people_imagePath(tmdb_id: int = 31, api_key: str = get_api_key())-> str:
+def fetch_people_imagePath(tmdb_id: int, api_key: str = get_api_key())-> str:
     """
     Récupère le chemin de l'image de profil d'une personne à partir de son identifiant TMDB.
 
