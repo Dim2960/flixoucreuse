@@ -69,7 +69,7 @@ def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tup
     url = f'https://api.themoviedb.org/3/find/{my_imdb_id}?external_source=imdb_id&api_key={api_key}'
 
     response = requests.get(url)
-
+    st.write(response.status_code)
     if response.status_code == 200:
         data = response.json()
         df = pd.DataFrame(data['person_results'])
