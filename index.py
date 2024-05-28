@@ -11,7 +11,6 @@ from modules.machine_learning import ML_reco
 df_film, df_name, df_film_select = data_importation()
 
 
-
 ################################
 #   Gestion du style de la page
 ################################

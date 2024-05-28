@@ -1,6 +1,7 @@
 from modules.importation import st, pd, base64
 from modules.function import image_exists
-from modules.display import display_people_image
+from modules.tmdb_api import display_people_image
+
 
 def background()->None:
     """
@@ -50,7 +51,7 @@ def menu_navigation()->None:
     st.sidebar.page_link("pages/info_film.py", label="Détails Film", icon="1️⃣")
     
     # Ajoute un lien vers la page "pages/dasboard.py" dans la barre latérale avec une étiquette et une icône
-    st.sidebar.page_link("pages/dasboard.py", label="Dashboard", icon="2️⃣")
+    st.sidebar.page_link("pages/dashboard.py", label="Dashboard", icon="2️⃣")
 
 
 
