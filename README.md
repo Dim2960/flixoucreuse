@@ -14,8 +14,7 @@ Le projet s'est déroulé en plusieurs étapes :
 - [Installation](#installation)
 - [Utilisation](#utilisation)
 - [Membres du projet](#membres)
-- [Contributing](#contributing)
-- [Licence](#licence)
+- [Remerciements](#remerciements)
 
 ## Installation
 
@@ -46,4 +45,3 @@ Dim2960
 ## Remerciements
 
 - Merci à [Romain Lejeune](https://github.com/nom) pour l'aide apportée durant ce projet.
-

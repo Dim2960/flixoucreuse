@@ -1,7 +1,7 @@
 from modules.importation import st, requests, pd
 
 # recuperation de la clé API tmdb
-def get_api_key(path: str = "data/api_tmdb.txt") -> str:
+def get_api_key() -> str:
     """
     Récupère la clé API pour accéder à l'API de The Movie Database (TMDB) à partir d'un fichier texte.
 
@@ -12,13 +12,14 @@ def get_api_key(path: str = "data/api_tmdb.txt") -> str:
     Returns:
     str: La clé API pour accéder à l'API de TMDB.
     """
+    # path: str = "data/api_tmdb.txt"
+    # with open(path, 'r') as api_file:
+    #     first_line = api_file.read()
 
-    with open(path, 'r') as api_file:
-        first_line = api_file.read()
+        
+    first_line = st.secrets["API_KEY"]
 
-        print(first_line)
-
-        return first_line
+    return first_line
 
     
 @st.cache_data
