@@ -33,7 +33,7 @@ def fetch_people_imagePath(tmdb_id: int, api_key: str = get_api_key())-> str:
     Returns:
     str: Le chemin de l'image de profil de la personne.
     """
-
+    api_key = str(api_key)
     url = f'https://api.themoviedb.org/3/person/{tmdb_id}/images?api_key={api_key}'
 
     response = requests.get(url)
@@ -69,15 +69,15 @@ def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tup
     url = f'https://api.themoviedb.org/3/find/{my_imdb_id}?external_source=imdb_id&api_key={api_key}'
 
     response = requests.get(url)
-    st.write(response.status_code)
+
     if response.status_code == 200:
         data = response.json()
         df = pd.DataFrame(data['person_results'])
-        st.write(df)
+
         if len(df) != 0:
             tmdb_id = int(df['id'][0])
             tmdb_name = df['original_name'][0]
-            st.write(tmdb_id, tmdb_name)
+
             return tmdb_id, tmdb_name
         else:
             return 0, ""
@@ -121,7 +121,7 @@ def fetch_idMovie_fromImdbtconst(my_imdb_id: str, api_key: str = get_api_key())-
     int: L'identifiant TMDB du film.
     """
         # les trois freres: tt0114732 - 37653
-
+    api_key = str(api_key)
     url = f'https://api.themoviedb.org/3/find/{my_imdb_id}?external_source=imdb_id&api_key={api_key}'
 
     response = requests.get(url)
@@ -154,7 +154,7 @@ def fetch_video_link(movie_id: int, api_key: str = get_api_key())->str:
     Returns:
     str: Le lien de la vidéo du trailer sur YouTube.
     """
-
+    api_key = str(api_key)
     url = f"https://api.themoviedb.org/3/movie/{str(movie_id)}/videos?api_key={api_key}"
 
     response = requests.get(url)
