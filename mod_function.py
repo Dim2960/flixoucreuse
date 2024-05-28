@@ -1,7 +1,3 @@
-import pandas as pd
-from googletrans import Translator
-import requests as requests
-
 
 
 def data_importation()->tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:

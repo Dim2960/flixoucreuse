@@ -1,6 +1,4 @@
-import streamlit as st
-import requests
-import pandas as pd
+
 
 # recuperation de la clé API tmdb
 def get_api_key(path: str = r"data/api_tmdb.txt") -> tuple[str]:

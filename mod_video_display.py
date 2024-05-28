@@ -1,7 +1,3 @@
-import streamlit as st
-import pandas as pd
-from tmdb_api import *
-
 
 
 def aff_video(df: pd.DataFrame)->None:

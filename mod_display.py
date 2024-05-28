@@ -1,8 +1,3 @@
-import streamlit as st
-import pandas as pd
-import base64
-from tmdb_api import *
-from mod_function import *
 
 
 def background()->None:
