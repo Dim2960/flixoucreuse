@@ -340,7 +340,7 @@ def aff_casting(df: pd.DataFrame) -> None:
 
     col20, col21, col22, col23 = st.columns(4)
     gens0, gens1, gens2, gens3, gens4, gens5, gens6 = 0,0,0,0,0,0,0
-    bbb = 0
+
     n_col_temp=0
 
     for id in range(len(list_cat_people)): 
@@ -384,7 +384,7 @@ def aff_casting(df: pd.DataFrame) -> None:
                                 names[list_cat_people[id]].append(name) 
 
 
-                        aaa = locals()['gens' + str(id)] 
+                        count_people = locals()['gens' + str(id)] 
 
                         nb_gens = len(chemins[list_cat_people[id]])
 
@@ -398,42 +398,42 @@ def aff_casting(df: pd.DataFrame) -> None:
                             slid_haut = nb_gens -2
 
                         if nb_gens >2:
-                            aaa = st.slider(categ, 0, slid_haut, 0)
+                            count_people = st.slider(categ, 0, slid_haut, 0)
                             html = f"""
                                 <div style='display: flex; justify-content: center; height:230px;'>
                                     <figure style="margin: 5px;">
-                                        <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width="100%">
-                                        <figcaption>{str(names[list_cat_people[id]][0+aaa])}</figcaption>
+                                        <img src="{str(chemins[list_cat_people[id]][0 + count_people])}" width="100%">
+                                        <figcaption>{str(names[list_cat_people[id]][0 + count_people])}</figcaption>
                                     </figure>
                                     <figure style="margin: 5px;">
-                                        <img src="{str(chemins[list_cat_people[id]][1+aaa])}" width="100%">
-                                        <figcaption>{str(names[list_cat_people[id]][1+aaa])}</figcaption>
+                                        <img src="{str(chemins[list_cat_people[id]][1 + count_people])}" width="100%">
+                                        <figcaption>{str(names[list_cat_people[id]][1 + count_people])}</figcaption>
                                     </figure>                              
                                 </div>
                             """
                         elif nb_gens == 2:
-                            aaa = st.slider(categ, 0, 1, 0)
-                            aaa = 0
+                            count_people = st.slider(categ, 0, 1, 0)
+                            count_people = 0
                             html = f"""
                                 <div style='display: flex; justify-content: center; height:230px;'>
                                     <figure style="margin: 5px;">
-                                        <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width="100%">
-                                        <figcaption>{str(names[list_cat_people[id]][0+aaa])}</figcaption>
+                                        <img src="{str(chemins[list_cat_people[id]][0 + count_people])}" width="100%">
+                                        <figcaption>{str(names[list_cat_people[id]][0 + count_people])}</figcaption>
                                     </figure>
                                     <figure style="margin: 5px;">
-                                        <img src="{str(chemins[list_cat_people[id]][1+aaa])}" width="100%">
-                                        <figcaption>{str(names[list_cat_people[id]][1+aaa])}</figcaption>
+                                        <img src="{str(chemins[list_cat_people[id]][1 + count_people])}" width="100%">
+                                        <figcaption>{str(names[list_cat_people[id]][1 + count_people])}</figcaption>
                                     </figure>                              
                                 </div>
                             """
                         elif nb_gens == 1:
-                            aaa = st.slider(categ, 0, 1, 0)
-                            aaa = 0
+                            count_people = st.slider(categ, 0, 1, 0)
+                            count_people = 0
                             html = f"""
                                 <div style='display: flex; justify-content: center; height:230px;'>
                                     <figure style="margin: 5px;">
-                                        <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width="50%">
-                                        <figcaption>{str(names[list_cat_people[id]][0+aaa])}</figcaption>
+                                        <img src="{str(chemins[list_cat_people[id]][0 + count_people])}" width="50%">
+                                        <figcaption>{str(names[list_cat_people[id]][0 + count_people])}</figcaption>
                                     </figure>
                                     <figure style="margin: 5px;">
                                         <img src="" width="100%">
@@ -442,13 +442,13 @@ def aff_casting(df: pd.DataFrame) -> None:
                                 </div>
                             """
                         else:
-                            aaa = st.slider(categ, 0, 1, 0)
-                            aaa = 0
+                            count_people = st.slider(categ, 0, 1, 0)
+                            count_people = 0
                             html = f"""
                                 <div style='display: flex; justify-content: center; height:230px;'>
                                     <figure style="margin: 5px;">
-                                        <img src="{str(chemins[list_cat_people[id]][0+aaa])}" width="50%">
-                                        <figcaption>{str(names[list_cat_people[id]][0+aaa])}</figcaption>
+                                        <img src="{str(chemins[list_cat_people[id]][0 + count_people])}" width="50%">
+                                        <figcaption>{str(names[list_cat_people[id]][0 + count_people])}</figcaption>
                                     </figure>
                                 </div>
                             """
