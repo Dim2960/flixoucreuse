@@ -77,6 +77,7 @@ def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tup
         if len(df) != 0:
             tmdb_id = int(df['id'][0])
             tmdb_name = df['original_name'][0]
+            st.write(tmdb_id, tmdb_name)
             return tmdb_id, tmdb_name
         else:
             return 0, ""
