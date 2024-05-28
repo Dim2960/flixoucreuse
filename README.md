@@ -1,7 +1,7 @@
 # Système de recommandation de film
 
 ## Description
-Bienvenue sur le dépôt GitHub de notre projet de groupe réalisé pendant notre formation en Data Analyse avec la World code School. Ce projet a été mené par trois étudiants dans le cadre de notre cursus, et il porte sur la création d'un système de recommandation de films.
+Bienvenue sur le dépôt GitHub de notre projet de groupe réalisé pendant notre formation en Data Analyse avec la World code School. Ce projet a été mené par Aikel, Victoria et moi dans le cadre de notre cursus, et il porte sur la création d'un système de recommandation de films.
 
 Le projet s'est déroulé en plusieurs étapes :
 
@@ -34,7 +34,7 @@ Le projet s'est déroulé en plusieurs étapes :
 ## Utilisation
 
 * Pour explorer les données et exécuter les analyses, ouvrez les notebooks correspondants dans Jupyter ou Google Colab : [Notebook](https://github.com/Dim2960/flixoucreuse/exploration_visualisation).
-* Pour utiliser l'application ouvrez l'application à partir de l'url suivante : [appli-streamlit](https://flixoucreuse-xdmhxxc7d3cexk8ixtxcks.streamlit.app/)
+* Pour utiliser l'application ouvrez l'application à partir de l'url suivante : [appli-streamlit](https://flixoucreuse.streamlit.app/)
 
 ## Membres du projet
 
