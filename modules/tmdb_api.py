@@ -14,11 +14,11 @@ def get_api_key(path: str = "data/api_tmdb.txt") -> str:
     """
 
     with open(path, 'r') as api_file:
-        first_line = api_file.readline()
+        first_line = api_file.read()
 
-        print(first_line.split(":")[1].strip())
+        print(first_line)
 
-        return first_line.split(":")[1].strip()
+        return first_line
 
     
 @st.cache_data

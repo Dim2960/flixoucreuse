@@ -1,3 +1,1 @@
-Clé API tmdb : 9304893f051ce7c22991d9eb105ae6ab
-
-https://api.themoviedb.org/3/movie/550?api_key=9304893f051ce7c22991d9eb105ae6ab
+9304893f051ce7c22991d9eb105ae6ab
