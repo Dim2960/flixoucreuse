@@ -49,11 +49,11 @@ def menu_navigation()->None:
     # Ajoute un lien vers la page "index.py" dans la barre latérale avec une étiquette et une icône
     st.sidebar.page_link("index.py", label="Recommandation", icon="🏠")
     
-    # Ajoute un lien vers la page "pages/nouvelle_page.py" dans la barre latérale avec une étiquette et une icône
-    st.sidebar.page_link("pages/nouvelle_page.py", label="Détails Film", icon="1️⃣")
+    # Ajoute un lien vers la page "pages/info_film.py" dans la barre latérale avec une étiquette et une icône
+    st.sidebar.page_link("pages/info_film.py", label="Détails Film", icon="1️⃣")
     
-    # Ajoute un lien vers la page "pages/FlixCreuse.py" dans la barre latérale avec une étiquette et une icône
-    st.sidebar.page_link("pages/FlixCreuse.py", label="Dashboard", icon="2️⃣")
+    # Ajoute un lien vers la page "pages/dasboard.py" dans la barre latérale avec une étiquette et une icône
+    st.sidebar.page_link("pages/dasboard.py", label="Dashboard", icon="2️⃣")
 
 
 
@@ -252,7 +252,7 @@ def display_reco(list_film2:list, df_film:pd.DataFrame)->None:
             html2 = f"""
                 <div style='display: flex; justify-content: center;'>
                     <figure style="margin: 5px; text-align:center;">
-                        <a href="nouvelle_page?tconst={chemin_poster['tconst'][0]}" target= "_self" >
+                        <a href="info_film?tconst={chemin_poster['tconst'][0]}" target= "_self" >
                             <img src="{chemin_complet}" class="hover-image1">  
                         </a>
                         <figcaption style="text-align:center;">{str(chemin_poster["title"][0])}</figcaption>
@@ -286,7 +286,7 @@ def display_selection(result_film:pd.DataFrame)->None:
      # Création du HTML pour afficher le poster du film avec un lien cliquable
     html = f"""
         <div style='display: flex; justify-content: center;'>
-            <a href="nouvelle_page?tconst={result_film['tconst'][0]}" target= "_self" >
+            <a href="info_film?tconst={result_film['tconst'][0]}" target= "_self" >
                 <img src="{chemin_complet}" class="hover-image">  
             </a>
         </div>
