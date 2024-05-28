@@ -1,4 +1,4 @@
-
+from modules.importation import st, pd, sns, plt
 
 
 def graph_film_pop(df:pd.DataFrame)->None:

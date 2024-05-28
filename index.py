@@ -1,11 +1,8 @@
-from modules.importation import *
+from modules.importation import st, time
 
-from modules.display_graph import *
-from modules.display import * 
-from modules.machine_learning import *
-from modules.function import *
-from modules.tmdb_api import *
-
+from modules.display import background, menu_navigation, menu_select_genres, menu_select_date, diplay_title, display_reco, display_selection
+from modules.function import data_importation
+from modules.machine_learning import ML_reco
 
 ################################
 #   importation des dataframes

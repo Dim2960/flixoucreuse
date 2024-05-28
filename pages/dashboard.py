@@ -1,5 +1,8 @@
+from modules.importation import st
+
+from modules.display import background, menu_navigation, menu_select_genres, menu_select_date, menu_select_paysProd,menu_select_real
+from modules.function import data_importation
 from modules.display_graph import *
-from modules.display import * # interieur import streamlit, pandas, base64, tmdb_API, mod_function
 
 
 ################################

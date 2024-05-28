@@ -1,4 +1,4 @@
-
+from modules.importation import pd, requests, Translator
 
 def data_importation()->tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """
@@ -42,7 +42,7 @@ def trad(text:str)->str:
     return traduction.text
 
 
-def image_exists(url)-> Bool:
+def image_exists(url)->bool:
     """
     Vérifie si une image existe à l'URL donnée.
 

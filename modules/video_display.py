@@ -1,3 +1,5 @@
+from modules.importation import st, pd
+from modules.tmdb_api import fetch_video_link, fetch_idMovie_fromImdbtconst
 
 
 def aff_video(df: pd.DataFrame)->None:

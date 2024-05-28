@@ -1,4 +1,8 @@
-
+from modules.importation import (st, pd, np, Pipeline, 
+                                StandardScaler, FunctionTransformer, 
+                                MultiLabelBinarizer, ColumnTransformer, 
+                                SimpleImputer, BaseEstimator, 
+                                TransformerMixin, NearestNeighbors)
 
 
 def prepa_data_filtered(df:pd.DataFrame, tconst_titre:str, genres:list, start_end_year:list)->pd.DataFrame:

@@ -1,4 +1,4 @@
-
+from modules.importation import st, requests, pd
 
 # recuperation de la clé API tmdb
 def get_api_key(path: str = r"data/api_tmdb.txt") -> tuple[str]:

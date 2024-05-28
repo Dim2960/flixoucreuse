@@ -1,4 +1,6 @@
-
+from modules.importation import st, pd, base64
+from modules.function import image_exists
+from modules.display import display_people_image
 
 def background()->None:
     """
