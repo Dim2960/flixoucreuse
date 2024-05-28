@@ -54,7 +54,7 @@ def fetch_people_imagePath(tmdb_id: int, api_key: str = get_api_key())-> str:
 
 
 @st.cache_data 
-def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tuple[int,str]:
+def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = '9304893f051ce7c22991d9eb105ae6ab')->tuple[int,str]:
     """
     Récupère l'identifiant TMDB et le nom d'une personne à partir de son identifiant IMDb.
 
