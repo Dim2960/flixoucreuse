@@ -12,7 +12,7 @@ Le projet s'est déroulé en plusieurs étapes :
 
 ## Table des matières
 - [Installation](#installation)
-- [Usage](#usage)
+- [Utilisation](#utilisation)
 - [Contributing](#contributing)
 - [Licence](#licence)
 
@@ -31,14 +31,8 @@ Le projet s'est déroulé en plusieurs étapes :
     pip install -r requirements.txt
     ```
 
-## Usage
-
-Pour démarrer l'application, utilisez:
-```sh
-npm start
-```
 
 ## Utilisation
 
 * Pour explorer les données et exécuter les analyses, ouvrez les notebooks correspondants dans Jupyter ou Google Colab.
-* Pour utiliser l'application ouvrez l'application à partir de l'url suivante : [link] (https://flixoucreuse-xdmhxxc7d3cexk8ixtxcks.streamlit.app/)
+* Pour utiliser l'application ouvrez l'application à partir de l'url suivante : [link](https://flixoucreuse-xdmhxxc7d3cexk8ixtxcks.streamlit.app/)
