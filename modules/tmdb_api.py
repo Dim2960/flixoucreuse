@@ -65,7 +65,7 @@ def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tup
     Returns:
     tuple[int, str]: L'identifiant TMDB et le nom de la personne.
     """
-
+    st.write(api_key)
     url = f'https://api.themoviedb.org/3/find/{my_imdb_id}?external_source=imdb_id&api_key={api_key}'
 
     response = requests.get(url)
