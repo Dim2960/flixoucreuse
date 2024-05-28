@@ -13,7 +13,7 @@ Le projet s'est déroulé en plusieurs étapes :
 ## Table des matières
 - [Installation](#installation)
 - [Utilisation](#utilisation)
-- [Membres du projet](#membres)
+- [Membres du projet](#membres du projet)
 - [Contributing](#contributing)
 - [Licence](#licence)
 
@@ -32,15 +32,17 @@ Le projet s'est déroulé en plusieurs étapes :
     pip install -r requirements.txt
     ```
 
-
 ## Utilisation
 
-* Pour explorer les données et exécuter les analyses, ouvrez les notebooks correspondants dans Jupyter ou Google Colab.
+* Pour explorer les données et exécuter les analyses, ouvrez les notebooks correspondants dans Jupyter ou Google Colab : [Notebook](https://github.com/Dim2960/flixoucreuse/exploration_visualisation).
 * Pour utiliser l'application ouvrez l'application à partir de l'url suivante : [appli-streamlit](https://flixoucreuse-xdmhxxc7d3cexk8ixtxcks.streamlit.app/)
 
-
-## Les membres du projet
+## Membres du projet
 
 victoria-1989
 charaabi01
 Dim2960
+
+## Remerciements
+
+Merci à Romain Lejeune pour l'aide apportée.
