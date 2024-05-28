@@ -1,4 +1,4 @@
-from mod_ML import *
+from mod_ml import *
 from mod_display import * # interieur import streamlit, pandas, base64, tmdb_API, mod_function
 import time
 

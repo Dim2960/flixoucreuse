@@ -1,7 +1,6 @@
 import streamlit as st
-import requests
 import pandas as pd
-from tmdb_API import *
+from tmdb_api import *
 
 
 
