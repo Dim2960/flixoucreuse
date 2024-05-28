@@ -48,7 +48,7 @@ def fetch_people_imagePath(tmdb_id: int, api_key: str = get_api_key())-> str:
 
     else:
         print("Erreur fetching data")
-        return None
+
 
 
 @st.cache_data 
@@ -81,7 +81,6 @@ def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tup
 
     else:
         print("Erreur fetching data")
-        return None
 
     
 
@@ -137,7 +136,7 @@ def fetch_idMovie_fromImdbtconst(my_imdb_id: str, api_key: str = get_api_key())-
 
     else:
         print("Erreur fetching data")
-        return None
+
 
 
 

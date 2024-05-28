@@ -456,8 +456,7 @@ def aff_casting(df: pd.DataFrame) -> None:
                         # Affichage du poster du film en utilisant st.markdown pour interpréter le HTML
                         st.markdown(html, unsafe_allow_html=True)
                         n_col_temp += 1
-
-    return None
+  
 
 
 def read_st_local_img(file)->str:

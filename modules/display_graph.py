@@ -31,8 +31,6 @@ def graph_film_pop(df:pd.DataFrame)->None:
 
     st.pyplot()
 
-    return None
-
 
 
 def graph_film_revenu(df:pd.DataFrame)->None:
@@ -64,8 +62,7 @@ def graph_film_revenu(df:pd.DataFrame)->None:
 
     st.pyplot()
 
-    return None
-
+    
 
 
 def graph_film_note(df:pd.DataFrame)->None:
@@ -104,8 +101,6 @@ def graph_film_note(df:pd.DataFrame)->None:
         fig2.text(value, index, str(value), ha='left', va='center')
 
     st.pyplot()
-
-    return None
 
 
 
@@ -148,7 +143,6 @@ def graph_acteurs(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
 
     st.pyplot()
 
-    return None
 
 
 def graph_actrices(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
@@ -190,7 +184,7 @@ def graph_actrices(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
     
     st.pyplot()
 
-    return None
+
 
 
 def graph_societeProd(df:pd.DataFrame)->None:
@@ -221,7 +215,6 @@ def graph_societeProd(df:pd.DataFrame)->None:
 
     st.pyplot()
     
-    return None
 
 
 
@@ -265,7 +258,6 @@ def graph_real(df_film:pd.DataFrame, df_name:pd.DataFrame)->None:
 
     st.pyplot()
 
-    return None
 
 
 
@@ -296,7 +288,7 @@ def graph_film_genres(df:pd.DataFrame)->None:
     fig10.set_xticklabels(fig10.get_xticklabels(), rotation=45, horizontalalignment='right')
 
     st.pyplot()
-    return None
+
 
 
 def graph_paysProd(df:pd.DataFrame)->None:
@@ -324,7 +316,7 @@ def graph_paysProd(df:pd.DataFrame)->None:
 
     st.pyplot()
 
-    return None
+   
 
 
 
@@ -349,7 +341,6 @@ def graph_duree_film(df:pd.DataFrame)->None:
 
     st.pyplot()
 
-    return None
 
 
 def graph_note_moyenne(df:pd.DataFrame)->None:
@@ -376,5 +367,5 @@ def graph_note_moyenne(df:pd.DataFrame)->None:
 
     st.pyplot()
 
-    return None
+
 
