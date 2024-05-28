@@ -73,7 +73,7 @@ def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tup
     if response.status_code == 200:
         data = response.json()
         df = pd.DataFrame(data['person_results'])
-
+        st.write(df)
         if len(df) != 0:
             tmdb_id = int(df['id'][0])
             tmdb_name = df['original_name'][0]
