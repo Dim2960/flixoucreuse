@@ -22,13 +22,13 @@ Le projet s'est déroulé en plusieurs étapes :
 
 ## Sources
 Les données mise en oeuvres pour ce projets ont été collecté sur [IMDB](https://www.imdb.com/) et [TMDB](https://www.themoviedb.org/)         
-- #### IMDB ([Notice](https://developer.imdb.com/non-commercial-datasets/)) :  https://datasets.imdbws.com/
-- #### TMDB ([Notice et API](https://developer.themoviedb.org/docs/image-basics/)) : https://drive.google.com/file/d/1VB5_gl1fnyBDzcIOXZ5vUSbCY68VZN1v/view/
+![Flixoucreuse](img\imdb-color.svg) IMDB ([Notice](https://developer.imdb.com/non-commercial-datasets/)) :  https://datasets.imdbws.com/
+![Flixoucreuse](img\themoviedatabase-color.svg) TMDB ([Notice et API](https://developer.themoviedb.org/docs/image-basics/)) : https://drive.google.com/file/d/1VB5_gl1fnyBDzcIOXZ5vUSbCY68VZN1v/view/
 
 ## Installation
 0. Prérequis d'installation
     
-    ![Flixoucreuse](https://github.com/Dim2960/flixoucreuse/blob/main/img/python-color.svg) Python >= 2.12
+    ![Flixoucreuse](img/python-color.svg) Python >= 2.12
     
 1. Clonez le dépôt:
     ```sh
