@@ -14,8 +14,8 @@ Le projet s'est déroulé en plusieurs étapes :
 
 ## Table des matières
 - [Sources](#sources)
+- [Livrables](#livrables)
 - [Installation](#installation)
-- [Observations](#observations)
 - [Equipe](#equipe)
 - [Remerciements](#remerciements)
 - [Technologies](#technologies)
@@ -24,6 +24,11 @@ Le projet s'est déroulé en plusieurs étapes :
 Les données mise en oeuvres pour ce projets ont été collecté sur [IMDB](https://www.imdb.com/) et [TMDB](https://www.themoviedb.org/)      
 ![imdb](img/imdb-color.svg) ([Notice](https://developer.imdb.com/non-commercial-datasets/)) :  https://datasets.imdbws.com/  
 ![tmdb](img/themoviedatabase-color.svg) ([Notice et API](https://developer.themoviedb.org/docs/image-basics/)) : https://drive.google.com/file/d/1VB5_gl1fnyBDzcIOXZ5vUSbCY68VZN1v/view/
+    
+## Livrables
+
+* Nettoyage, exploration, visualisation des données : ouvrez les notebooks correspondants dans Jupyter ou Google Colab : [Notebook](https://github.com/Dim2960/flixoucreuse/exploration_visualisation).
+* Application : ouvrez à partir de l'url suivante : [appli-streamlit](https://flixoucreuse.streamlit.app/)
 
 ## Installation
 0. Prérequis d'installation
@@ -50,11 +55,6 @@ Les données mise en oeuvres pour ce projets ont été collecté sur [IMDB](http
     ```sh
     streamlit run index.py
     ```
-    
-## Observations
-
-* Pour voir le nettoyage, l'exploration, visualisation des données , ouvrez les notebooks correspondants dans Jupyter ou Google Colab : [Notebook](https://github.com/Dim2960/flixoucreuse/exploration_visualisation).
-* Pour un exemple de l'application ouvrez à partir de l'url suivante : [appli-streamlit](https://flixoucreuse.streamlit.app/)
 
 ## Equipe
 
