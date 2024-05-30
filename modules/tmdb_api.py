@@ -18,11 +18,15 @@ def get_api_key(path: str = "data/api_tmdb.txt") -> str:
         first_line = api_file.read()
 
 
+    if first_line == "":
+        first_line = st.secrets["API_KEY"]
+
+
     return first_line
 
     
 @st.cache_data
-def fetch_people_imagePath(tmdb_id: int, api_key: str = st.secrets["API_KEY"])-> str:
+def fetch_people_imagePath(tmdb_id: int, api_key: str = get_api_key())-> str:
     """
     Récupère le chemin de l'image de profil d'une personne à partir de son identifiant TMDB.
 
@@ -54,7 +58,7 @@ def fetch_people_imagePath(tmdb_id: int, api_key: str = st.secrets["API_KEY"])->
 
 
 @st.cache_data 
-def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = st.secrets["API_KEY"])->tuple[int,str]:
+def fetch_tmdbId_from_imdbId(my_imdb_id: str, api_key: str = get_api_key())->tuple[int,str]:
     """
     Récupère l'identifiant TMDB et le nom d'une personne à partir de son identifiant IMDb.
 
@@ -109,7 +113,7 @@ def display_people_image(imdb_id: str)-> tuple[str, str]:
 
 
 
-def fetch_idMovie_fromImdbtconst(my_imdb_id: str, api_key: str = st.secrets["API_KEY"])->tuple[int,str]:
+def fetch_idMovie_fromImdbtconst(my_imdb_id: str, api_key: str = get_api_key())->tuple[int,str]:
     """
     Récupère l'identifiant TMDB d'un film à partir de son identifiant IMDb.
 
@@ -143,7 +147,7 @@ def fetch_idMovie_fromImdbtconst(my_imdb_id: str, api_key: str = st.secrets["API
 
 
 
-def fetch_video_link(movie_id: int, api_key: str = st.secrets["API_KEY"])->str:
+def fetch_video_link(movie_id: int, api_key: str = get_api_key())->str:
     """
     Récupère le lien de la vidéo du trailer d'un film à partir de son identifiant TMDB.
 
