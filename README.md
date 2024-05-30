@@ -21,9 +21,9 @@ Le projet s'est déroulé en plusieurs étapes :
 - [Technologies](#technologies)
 
 ## Sources
-Les données mise en oeuvres pour ce projets ont été collecté sur [IMDB](https://www.imdb.com/) et [TMDB](https://www.themoviedb.org/)         
-![Flixoucreuse](img\imdb-color.svg) IMDB ([Notice](https://developer.imdb.com/non-commercial-datasets/)) :  https://datasets.imdbws.com/
-![Flixoucreuse](img\themoviedatabase-color.svg) TMDB ([Notice et API](https://developer.themoviedb.org/docs/image-basics/)) : https://drive.google.com/file/d/1VB5_gl1fnyBDzcIOXZ5vUSbCY68VZN1v/view/
+Les données mise en oeuvres pour ce projets ont été collecté sur [IMDB](https://www.imdb.com/) et [TMDB](https://www.themoviedb.org/)      
+![imdb](img/imdb-color.svg) ([Notice](https://developer.imdb.com/non-commercial-datasets/)) :  https://datasets.imdbws.com/  
+![tmdb](img/themoviedatabase-color.svg) ([Notice et API](https://developer.themoviedb.org/docs/image-basics/)) : https://drive.google.com/file/d/1VB5_gl1fnyBDzcIOXZ5vUSbCY68VZN1v/view/
 
 ## Installation
 0. Prérequis d'installation
@@ -69,9 +69,9 @@ Les données mise en oeuvres pour ce projets ont été collecté sur [IMDB](http
 ## Technologies
 | Languages | Librairies python | Outils |
 |-----------|------------------|--------|
-| ![python](img/python-color.svg) Python | ![python](img/numpy-color.svg) numpy | ![python](img/jupyter-color.svg) Jupiter Notebook |
-| ![python](img/html5-color.svg) HTML | ![python](img/pandas-color.svg) pandas | ![python](img/github-color.svg) Github |
-| ![python](img/css3-color.svg) css | ![python](img/python-color.svg) matplotlib | ![python](img/visualstudiocode-color.svg) VS code |
-| | ![python](img/python-color.svg) seaborn | ![python](img/googlecolab-color.svg) google colab |
-| | ![python](img/scikitlearn-color.svg) scitkit-learn | ![python](img/discord-color.svg) Discord |
-| | ![python](img/streamlit-color.svg) streamlit | |
+| ![python](img/python-color.svg) Python | ![numpy](img/numpy-color.svg) numpy | ![jupiter](img/jupyter-color.svg) Jupiter Notebook |
+| ![html](img/html5-color.svg) HTML | ![pandas](img/pandas-color.svg) pandas | ![github](img/github-color.svg) Github |
+| ![css](img/css3-color.svg) css | ![matplotlib](img/python-color.svg) matplotlib | ![vscode](img/visualstudiocode-color.svg) VS code |
+| | ![seaborn](img/python-color.svg) seaborn | ![colab](img/googlecolab-color.svg) google colab |
+| | ![scikit-learn](img/scikitlearn-color.svg) scitkit-learn | ![discord](img/discord-color.svg) Discord |
+| | ![streamlit](img/streamlit-color.svg) streamlit | |
