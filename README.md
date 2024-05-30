@@ -1,5 +1,5 @@
 # Système de recommandation de film
-![Flixoucreuse](img/flixoucreuse.png)
+![Flixoucreuse](https://github.com/Dim2960/img/flixoucreuse.png)
 
 ## Description
 Bienvenue sur le dépôt GitHub de notre projet de groupe réalisé pendant notre formation en Data Analyse avec la World code School. Ce projet a été mené par Aikel, Victoria et moi dans le cadre de notre cursus, et il porte sur la création d'un système de recommandation de films.
@@ -31,8 +31,9 @@ Le projet s'est déroulé en plusieurs étapes :
     ```sh
     pip install -r requirements.txt
     ```
-4. Ajouter la clé API tmdb pour utilisation en local:
-   Copier la clé API tmdb dans le fichier api.txt
+4. Ajouter la clé API tmdb pour utilisation en local:  
+  
+   Copier votre clé API tmdb dans le fichier api.txt
 
 5. Lancer l'application en local:
     ```sh
