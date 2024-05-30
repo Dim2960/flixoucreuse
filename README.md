@@ -1,5 +1,5 @@
+![Flixoucreuse](https://github.com/Dim2960/flixoucreuse/blob/main/img/flixoucreuse.png)
 # Système de recommandation de film 
-![Flixoucreuse](https://github.com/Dim2960/flixoucreuse/blob/main/img/flixoucreuse_miniature.png)
 
 ## Description
 Bienvenue sur le dépôt GitHub de notre projet de groupe réalisé pendant notre formation en Data Analyse avec la World code School. Ce projet a été mené par Aikel, Victoria et moi dans le cadre de notre cursus, et il porte sur la création d'un système de recommandation de films.
