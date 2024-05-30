@@ -1,4 +1,4 @@
-![Flixoucreuse](https://github.com/Dim2960/flixoucreuse/blob/main/img/flixoucreuse.png)
+![Flixoucreuse](https://github.com/Dim2960/flixoucreuse/blob/main/img/Flixoucreuse.png)
 # Système de recommandation de film 
 
 ## Description
