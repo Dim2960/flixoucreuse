@@ -1,5 +1,5 @@
 # Système de recommandation de film
-![Flixoucreuse](https://github.com/Dim2960/img/flixoucreuse.png)
+![Flixoucreuse](https://github.com/Dim2960/flixoucreuse/blob/main/img/Flixoucreuse.png)
 
 ## Description
 Bienvenue sur le dépôt GitHub de notre projet de groupe réalisé pendant notre formation en Data Analyse avec la World code School. Ce projet a été mené par Aikel, Victoria et moi dans le cadre de notre cursus, et il porte sur la création d'un système de recommandation de films.
@@ -13,7 +13,7 @@ Le projet s'est déroulé en plusieurs étapes :
 
 ## Table des matières
 - [Installation](#installation)
-- [Utilisation](#utilisation)
+- [Observations](#Observations)
 - [Membres du projet](#membres)
 - [Remerciements](#remerciements)
 
@@ -40,8 +40,7 @@ Le projet s'est déroulé en plusieurs étapes :
     streamlit run index.py
     ```
     
-
-## Observation
+## Observations
 
 * Pour voir le nettoyage, l'exploration, visualisation des données , ouvrez les notebooks correspondants dans Jupyter ou Google Colab : [Notebook](https://github.com/Dim2960/flixoucreuse/exploration_visualisation).
 * Pour un exemple de l'application ouvrez à partir de l'url suivante : [appli-streamlit](https://flixoucreuse.streamlit.app/)
