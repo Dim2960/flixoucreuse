@@ -1,4 +1,5 @@
 # Système de recommandation de film
+![Flixoucreuse](img/flixoucreuse.png)
 
 ## Description
 Bienvenue sur le dépôt GitHub de notre projet de groupe réalisé pendant notre formation en Data Analyse avec la World code School. Ce projet a été mené par Aikel, Victoria et moi dans le cadre de notre cursus, et il porte sur la création d'un système de recommandation de films.
@@ -30,18 +31,26 @@ Le projet s'est déroulé en plusieurs étapes :
     ```sh
     pip install -r requirements.txt
     ```
+4. Ajouter la clé API tmdb pour utilisation en local:
+   Copier la clé API tmdb dans le fichier api.txt
 
-## Utilisation
+5. Lancer l'application en local:
+    ```sh
+    streamlit run index.py
+    ```
+    
 
-* Pour explorer les données et exécuter les analyses, ouvrez les notebooks correspondants dans Jupyter ou Google Colab : [Notebook](https://github.com/Dim2960/flixoucreuse/exploration_visualisation).
-* Pour utiliser l'application ouvrez l'application à partir de l'url suivante : [appli-streamlit](https://flixoucreuse.streamlit.app/)
+## Observation
+
+* Pour voir le nettoyage, l'exploration, visualisation des données , ouvrez les notebooks correspondants dans Jupyter ou Google Colab : [Notebook](https://github.com/Dim2960/flixoucreuse/exploration_visualisation).
+* Pour un exemple de l'application ouvrez à partir de l'url suivante : [appli-streamlit](https://flixoucreuse.streamlit.app/)
 
 ## Membres du projet
 
-victoria-1989  
-charaabi01  
-Dim2960
+[victoria-1989](https://github.com/victoria-1989)  
+[charaabi01](https://github.com/charaabi01)  
+[Dim2960](https://github.com/Dim2960)
 
 ## Remerciements
 
-- Merci à [Romain Lejeune](https://github.com/nom) pour l'aide apportée durant ce projet.
+- Merci à [Romain Lejeune](https://github.com/Vaelastraszz) pour l'aide apportée durant ce projet.
